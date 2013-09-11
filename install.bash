@@ -6,6 +6,9 @@ if [ ! -d "${sandboxDir}" ] ; then
    exit 1
 fi
 
+echo $PWD/${sandboxDir}
+exit 0
+
 files="
    vimrc
    bash_aliases"
@@ -13,10 +16,10 @@ files="
 for file in ${files} ; do
    if [ -f ~/."${file}" ] ; then
       echo "renaming existing ${file}"
-      echo mv ~/."${file}" ~/."${file}".old
+      mv ~/."${file}" ~/."${file}".old
    fi
    echo "creating symlink to ${file} in home directory"
-   echo ln -s "${sandboxDir}/${file}" ~/."${file}"
+   ln -s "${sandboxDir}/${file}" ~/."${file}"
 done
 
 exit 0
