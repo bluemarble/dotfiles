@@ -1,0 +1,11 @@
+---
+- name: Update homebrew
+  homebrew: update_homebrew=yes
+
+- name: Install homebrew libraries
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - curl
+    - git
+    - vim
+    - zsh

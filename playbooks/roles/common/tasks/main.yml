@@ -1,6 +1,6 @@
 ---
 - name: Symlink my dotfiles
-  file: src=~/dotfiles/home/{{ item }}
+  file: src=~/sandbox/dotfiles/home/{{ item }}
         dest=~/{{ item }}
         state=link
         force=yes
