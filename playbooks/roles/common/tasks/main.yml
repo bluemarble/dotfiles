@@ -6,3 +6,4 @@
         force=yes
   with_items:
     - .tmux.conf
+    - .zshrc
