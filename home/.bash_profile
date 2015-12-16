@@ -15,3 +15,10 @@ source '/Users/paul/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/Users/paul/google-cloud-sdk/completion.bash.inc'
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+    -o "nospace" \
+    -W "$(grep "^[Hh]ost" ~/.ssh/config | \
+    grep -v "[?*]" | cut -d " " -f2 | \
+    tr ' ' '\n')" scp ssh
