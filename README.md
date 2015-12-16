@@ -6,5 +6,5 @@ dotfiles
 **To install:**
 
 ```console
-ansible-playbook -i inventory playbooks/osx.yml
+$ ansible-playbook -i inventory playbooks/osx.yml
 ```
