@@ -6,6 +6,5 @@ dotfiles
 To install:
 
 ```
-cd playbooks
-ansible-playbook -i inventory osx.yml
+ansible-playbook -i inventory playbooks/osx.yml
 ```
