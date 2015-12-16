@@ -7,4 +7,5 @@
   with_items:
     - .tmux.conf
     - .zshrc
+    - .bash_profile
     - .bash_aliases
