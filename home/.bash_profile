@@ -7,8 +7,8 @@ export PATH="$PATH:$HOME/Tools/jruby/bin"
 
 source ~/.bashrc
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/paul/google-cloud-sdk/path.bash.inc'
@@ -22,3 +22,8 @@ source '/Users/paul/google-cloud-sdk/completion.bash.inc'
     -W "$(grep "^[Hh]ost" ~/.ssh/config | \
     grep -v "[?*]" | cut -d " " -f2 | \
     tr ' ' '\n')" scp ssh
+
+complete -o "default" -o "nospace" -W "\
+   clone init add mv reset rm bisect grep log show status branch checkout \
+   commit diff merge rebase tag fetch pull push" \
+   git
