@@ -10,6 +10,7 @@
     - vim
     - zsh
     - npm
+    - shellcheck
 
 - name: Install npm packages
   npm: name={{ item }} state=latest global=yes
