@@ -9,3 +9,11 @@
     - .zshrc
     - .bash_profile
     - .bash_aliases
+
+- name: Symlink binaries
+  file: src=~/sandbox/dotfiles/bin/{{ item }}
+        dest=~/bin/{{ item }}
+        state=link
+        force=yes
+  with_items:
+    - splitpath

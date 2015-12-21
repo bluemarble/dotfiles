@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+_splitpath() {
+  x="$(eval echo \"\$$1\")"
+  while true ; do
+    frag=${x%%:*}
+    echo "$frag"
+    x=${x#*:}
+    if [ "$frag" = "$x" ] ; then
+      break
+    fi
+  done
+  return 0
+}
+
+while [ $# -gt 0 ] ; do
+case "$1" in
+  *) _splitpath "$1" 
+esac
+shift
+done
+
+exit 0
