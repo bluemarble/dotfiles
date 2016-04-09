@@ -21,7 +21,7 @@ source '/Users/paul/google-cloud-sdk/completion.bash.inc'
     -o "nospace" \
     -W "$(grep "^[Hh]ost" ~/.ssh/config | \
     grep -v "[?*]" | cut -d " " -f2 | \
-    tr ' ' '\n')" scp ssh
+    tr ' ' '\n')" scp ssh sftp
 
 complete -o "default" -o "nospace" -W "\
    clone init add mv reset rm bisect grep log show status branch checkout \
