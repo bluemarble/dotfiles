@@ -1,14 +1,14 @@
 ---
 - name: Symlink my dotfiles
   file: src=~/sandbox/dotfiles/home/{{ item }}
-        dest=~/{{ item }}
+        dest=~/.{{ item }}
         state=link
         force=yes
   with_items:
-    - .tmux.conf
-    - .zshrc
-    - .bash_profile
-    - .bash_aliases
+    - tmux.conf
+    - zshrc
+    - bash_profile
+    - bash_aliases
 
 - name: Symlink binaries
   file: src=~/sandbox/dotfiles/bin/{{ item }}
