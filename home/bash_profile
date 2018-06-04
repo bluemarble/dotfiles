@@ -19,7 +19,7 @@ source '/Users/paul/google-cloud-sdk/completion.bash.inc'
 # Add tab completion for SSH hostnames based on ~/.ssh/config
 [[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
     -o "nospace" \
-    -W "$(grep "^[Hh]ost" ~/.ssh/config | \
+    -W "$(grep "^[Hh]ost" ~/.ssh/config* | \
     grep -v "[?*]" | cut -d " " -f2 | \
     tr ' ' '\n')" scp ssh sftp
 
@@ -27,3 +27,6 @@ complete -o "default" -o "nospace" -W "\
    clone init add mv reset rm bisect grep log show status branch checkout \
    commit diff merge rebase tag fetch pull push" \
    git
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
