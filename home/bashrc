@@ -1,2 +1,6 @@
 set -o vi
 alias l='ls -l'
+
+# rbenv - for jekyll
+export PATH="${HOME}/.rbenv/bin:${PATH}"
+eval "$(rbenv init -)"
